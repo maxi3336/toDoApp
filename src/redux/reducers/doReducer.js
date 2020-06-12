@@ -21,6 +21,7 @@ const createReducer = (state = initialState, action) => {
             }
 
             state.doData.push(newDo)
+            debugger
             state.newDoText = ''
 
             return state
