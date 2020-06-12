@@ -7,7 +7,7 @@ const Do = (props) => {
 
     return (
         <div className={style.do}>
-            <Mark isMarked={props.isMarked}/>
+            <Mark store={props.store} isMarked={props.isMarked} doId={props.doId}/>
             <Content doContent={props.doContent} isMarked={props.isMarked}/>
         </div>
     )

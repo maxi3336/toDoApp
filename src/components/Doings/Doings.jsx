@@ -8,7 +8,7 @@ const Doings = (props) => {
 
     let state = props.store.getState()
 
-    let doData = state.toDoData.doData.map(doData => <Do doContent={doData.text} isMarked={doData.mark}/>)
+    let doData = state.toDoData.doData.map(doData => <Do store={props.store} doContent={doData.text} isMarked={doData.mark} doId={doData.id}/>)
 
 
     return (

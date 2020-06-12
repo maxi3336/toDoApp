@@ -1,12 +1,12 @@
 import React from 'react'
-import Marked from './Makrs/Marked'
-import UnMarked from './Makrs/UnMarked'
+import MarkedContainer from './Makrs/MarkedContainer'
+import UnMarkedContainer from './Makrs/UnMarkedContainer'
 
 const Mark = (props) => {
 
     return (
         <div>
-            {props.isMarked?<Marked/>:<UnMarked/>}
+            {props.isMarked?<MarkedContainer store={props.store} doId={props.doId}/>:<UnMarkedContainer store={props.store} doId={props.doId}/>}
         </div>
     )
 }

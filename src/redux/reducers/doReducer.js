@@ -1,10 +1,11 @@
 const ADD_DO = 'ADD-DO'
 const UPDATE_DO_TEXT = 'UPDATE-DO-TEXT'
+const UPDATE_MARK = 'UPDATE-MARK'
 
 let initialState = {
     doData: [
-        {id: 1, text: 'Cook food', mark: true},
-        {id: 2, text: 'Wash food', mark: false}
+        {id: 1, text: 'Open To Do', mark: true},
+        {id: 2, text: 'Add something', mark: false}
     ],
 
     newDoText: ''
@@ -30,6 +31,10 @@ const doReducer = (state = initialState, action) => {
 
             return state
 
+        case UPDATE_MARK:
+            let doDat = state.doData[action.id-1]
+            doDat.mark = action.mark
+
         default:
             return state
     }
@@ -44,6 +49,12 @@ export const addDoActionCreator = () => ({
 export const updateDoTextActionCreator = (text) => ({
     type: UPDATE_DO_TEXT,
     newText: text
+})
+
+export const updateMarkActionCreator = (id, mark) => ({
+    type: UPDATE_MARK,
+    id: id,
+    mark: mark
 })
 
 export default doReducer
