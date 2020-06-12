@@ -1,4 +1,4 @@
 To run project you need:
-    - Download it
-    - do 'npm install'
-    - do 'npm start'
+    1) Download it
+    2) do 'npm install'
+    3) do 'npm start'
