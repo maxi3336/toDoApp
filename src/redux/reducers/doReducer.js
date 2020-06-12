@@ -3,14 +3,14 @@ const UPDATE_DO_TEXT = 'UPDATE-DO-TEXT'
 
 let initialState = {
     doData: [
-        {id: 1, text: 'Cook food', mark: 'unmarked'},
-        {id: 2, text: 'Wash food', mark: 'unmarked'}
+        {id: 1, text: 'Cook food', mark: true},
+        {id: 2, text: 'Wash food', mark: false}
     ],
 
     newDoText: ''
 }
 
-const createReducer = (state = initialState, action) => {
+const doReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case ADD_DO:
@@ -21,7 +21,6 @@ const createReducer = (state = initialState, action) => {
             }
 
             state.doData.push(newDo)
-            debugger
             state.newDoText = ''
 
             return state
@@ -47,4 +46,4 @@ export const updateDoTextActionCreator = (text) => ({
     newText: text
 })
 
-export default createReducer
+export default doReducer

@@ -1,12 +1,13 @@
 import React from 'react'
-import style from './Mark.module.css'
+import Marked from './Makrs/Marked'
+import UnMarked from './Makrs/UnMarked'
 
-const Mark = () => {
+const Mark = (props) => {
 
     return (
-        <div
-            className={style.mark}
-        />
+        <div>
+            {props.isMarked?<Marked/>:<UnMarked/>}
+        </div>
     )
 }
 

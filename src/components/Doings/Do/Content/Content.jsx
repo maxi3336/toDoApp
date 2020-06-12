@@ -1,10 +1,12 @@
 import React from 'react'
 import style from './Content.module.css'
+import DoContent from './Contents/DoContent'
+import DoneContent from './Contents/DoneContent'
 
-const Content = () => {
+const Content = (props) => {
     return (
         <div className={style.content}>
-            Something need to do
+            {props.isMarked?<DoneContent doneContent={props.doContent}/>:<DoContent doContent={props.doContent}/>}
         </div>
     )
 }

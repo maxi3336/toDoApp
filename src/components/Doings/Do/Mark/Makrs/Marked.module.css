@@ -1,9 +1,14 @@
+.marked {
+    background-color: #B7B7B7;
+    border-color: red;
+}
+
 .mark {
     margin-right: 30px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: white;
+    background-color: #B7B7B7;
     border: 2px solid black;
 }
 

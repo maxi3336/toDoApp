@@ -10,7 +10,7 @@ const Main = (props) => {
         <div className={style.main}>
             <h1 className={style.text}>ToDo App</h1>
             <CreateContainer store={props.store}/>
-            <Doings />
+            <Doings store={props.store}/>
         </div>
     )
 }

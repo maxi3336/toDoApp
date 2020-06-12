@@ -3,11 +3,12 @@ import style from './Do.module.css'
 import Mark from "./Mark/Mark";
 import Content from "./Content/Content";
 
-const Do = () => {
+const Do = (props) => {
+
     return (
         <div className={style.do}>
-            <Mark/>
-            <Content/>
+            <Mark isMarked={props.isMarked}/>
+            <Content doContent={props.doContent} isMarked={props.isMarked}/>
         </div>
     )
 }
