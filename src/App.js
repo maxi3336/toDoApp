@@ -1,8 +1,9 @@
 import React from 'react'
+import Main from './components/Main/Main'
 
-function App() {
+const App = () => {
     return (
-        <h1>Hello!</h1>
+        <Main/>
     )
 }
 
