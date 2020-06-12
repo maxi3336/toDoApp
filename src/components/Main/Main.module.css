@@ -11,13 +11,3 @@
     color: #333333;
     text-align: center;
 }
-
-.textEnter {
-    width: 30%;
-    min-height: 50px;
-    max-height: 300px;
-    resize: none;
-    text-align: center;
-    line-height: 30px;
-    font-size: 18px;
-}

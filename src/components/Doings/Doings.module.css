@@ -1,0 +1,6 @@
+.doing {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 30px 0;
+}
