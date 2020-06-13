@@ -1,13 +1,13 @@
 .create {
-    width: 40%;
+    width: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .textEnter {
     outline: none;
-    width: 85%;
+    width: 80%;
     min-height: 50px;
     max-height: 300px;
     resize: none;
