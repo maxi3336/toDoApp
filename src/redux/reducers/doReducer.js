@@ -1,44 +1,67 @@
+import GetLocalState from "../GetLocalState";
+import SetStandartLocalState from "../SetStandartLocalState";
+
 const ADD_DO = 'ADD-DO'
 const UPDATE_DO_TEXT = 'UPDATE-DO-TEXT'
 const UPDATE_MARK = 'UPDATE-MARK'
+const RESET_STATE = 'RESET-STATE'
 
-let initialState = {
-    doData: [
-        {id: 1, text: 'Open To Do', mark: true},
-        {id: 2, text: 'Add something', mark: false}
-    ],
+let initialState
 
-    newDoText: ''
-}
+if(GetLocalState() === null) {
+    SetStandartLocalState()
+    initialState = GetLocalState()
+} else initialState = GetLocalState()
 
 const doReducer = (state = initialState, action) => {
 
-    const copyState = {
-        ...state,
-        doData: [...state.doData]
+    let copyState
+
+    let setLocalState = (state) => {
+        let localState = {
+            ...state,
+            doData: [...state.doData]
+        }
+        let localStateStr = JSON.stringify(localState)
+        localStorage.clear()
+        localStorage.setItem('localState', localStateStr)
     }
+
 
     switch(action.type) {
         case ADD_DO:
-
-            let newDo = {
-                id: (state.doData.length+1),
-                text: state.newDoText
+            copyState = {
+                ...state,
+                newDoText: '',
+                doData: [...state.doData, {id: (state.doData.length+1), text: state.newDoText}]
             }
-
-            copyState.doData.push(newDo)
-            copyState.newDoText = ''
-
+            setLocalState(copyState)
+            console.log(GetLocalState())
             return copyState
 
         case UPDATE_DO_TEXT:
-            copyState.newDoText = action.newText
-
+            copyState = {
+                ...state,
+                newDoText: action.newText
+            }
+            setLocalState(copyState)
             return copyState
 
         case UPDATE_MARK:
-            let doDat = copyState.doData[action.id-1]
-            doDat.mark = action.mark
+            copyState = {
+                ...state,
+                doData: [...state.doData ]
+            }
+            copyState.doData[action.id-1].mark = action.mark
+            setLocalState(copyState)
+            console.log(GetLocalState())
+            return copyState
+
+        case RESET_STATE:
+            SetStandartLocalState()
+            copyState = GetLocalState()
+            console.log(GetLocalState())
+            return copyState
 
         default:
             return state
@@ -60,6 +83,10 @@ export const updateMarkActionCreator = (id, mark) => ({
     type: UPDATE_MARK,
     id: id,
     mark: mark
+})
+
+export const resetStateActionCreator = () => ({
+    type: RESET_STATE
 })
 
 export default doReducer

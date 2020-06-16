@@ -18,6 +18,7 @@ const Create = (props) => {
                 value={props.newDoText}
             />
             <button className={style.btn} onClick={props.addDo}>Add</button>
+            <button className={style.clear} onClick={props.reset}>Clear</button>
         </div>
     )
 }

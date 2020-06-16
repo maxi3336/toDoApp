@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .textEnter {
@@ -23,7 +24,8 @@ button:focus {
     outline: none;
 }
 
-.btn {
+.btn,
+.clear{
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -31,10 +33,15 @@ button:focus {
     background-color: #A5E3FF;
     font-size: 18px;
     color: #333333;
-
+    margin: 10px 0;
 }
 
-.btn:hover {
+.clear {
+    background-color: #C4FFA6;
+}
+
+.btn:hover,
+.clear:hover{
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 

@@ -5,7 +5,7 @@ import Do from "./Do/Do";
 
 const mapStateToProps = (state) => {
     return {
-        doData: state.toDoData.doData.map(doData => <Do doId={doData.id} doContent={doData.text} isMarked={doData.mark}/>)
+        doData: state.toDoData.doData.map(doData => <Do key={doData.id} doId={doData.id} doContent={doData.text} isMarked={doData.mark}/>)
     }
 }
 

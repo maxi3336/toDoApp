@@ -1,6 +1,6 @@
 import React from 'react'
 import Create from './Create'
-import {addDoActionCreator, updateDoTextActionCreator} from "../../redux/reducers/doReducer";
+import {addDoActionCreator, updateDoTextActionCreator, resetStateActionCreator} from "../../redux/reducers/doReducer";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
@@ -16,6 +16,11 @@ const mapDispatchToProps = (dispatch) => {
 
         addDo: () => {
             let action = addDoActionCreator()
+            dispatch(action)
+        },
+
+        reset: () => {
+            let action = resetStateActionCreator()
             dispatch(action)
         }
     }
