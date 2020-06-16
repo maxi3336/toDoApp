@@ -2,10 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import store from './redux/store'
+import {Provider} from "react-redux";
 
 const reRenderEntireTree = (state) => {
     ReactDOM.render(
-        <App store={store}/>,
+        <Provider store={store}>
+            <App/>
+        </Provider>,
         document.getElementById('root')
     )
 }

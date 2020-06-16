@@ -13,6 +13,11 @@ let initialState = {
 
 const doReducer = (state = initialState, action) => {
 
+    const copyState = {
+        ...state,
+        doData: [...state.doData]
+    }
+
     switch(action.type) {
         case ADD_DO:
 
@@ -21,18 +26,18 @@ const doReducer = (state = initialState, action) => {
                 text: state.newDoText
             }
 
-            state.doData.push(newDo)
-            state.newDoText = ''
+            copyState.doData.push(newDo)
+            copyState.newDoText = ''
 
-            return state
+            return copyState
 
         case UPDATE_DO_TEXT:
-            state.newDoText = action.newText
+            copyState.newDoText = action.newText
 
-            return state
+            return copyState
 
         case UPDATE_MARK:
-            let doDat = state.doData[action.id-1]
+            let doDat = copyState.doData[action.id-1]
             doDat.mark = action.mark
 
         default:

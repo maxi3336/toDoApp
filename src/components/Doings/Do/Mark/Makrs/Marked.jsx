@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './Marked.module.css'
-import {updateMarkActionCreator} from "../../../../../redux/reducers/doReducer";
 
 const Marked = (props) => {
 
