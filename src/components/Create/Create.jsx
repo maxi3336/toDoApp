@@ -1,6 +1,5 @@
 import React from 'react'
 import style from "./Create.module.css";
-import TextareaAutosize from "react-textarea-autosize";
 
 const Create = (props) => {
 
