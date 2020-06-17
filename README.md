@@ -5,3 +5,5 @@ To run project you need:
     3) do 'npm start'
 
 Or visit it: https://todo-1088d.web.app/
+
+This version use localStorage
