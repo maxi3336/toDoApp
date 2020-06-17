@@ -5,6 +5,7 @@ const ADD_DO = 'ADD-DO'
 const UPDATE_DO_TEXT = 'UPDATE-DO-TEXT'
 const UPDATE_MARK = 'UPDATE-MARK'
 const RESET_STATE = 'RESET-STATE'
+const DELETE_DO = 'DELETE-DO'
 
 let initialState
 
@@ -30,6 +31,10 @@ const doReducer = (state = initialState, action) => {
 
     switch(action.type) {
         case ADD_DO:
+            if(state.newDoText === ''){
+                alert('Please write something!')
+                return GetLocalState()
+            }
             copyState = {
                 ...state,
                 newDoText: '',
@@ -63,6 +68,13 @@ const doReducer = (state = initialState, action) => {
             console.log(GetLocalState())
             return copyState
 
+        case DELETE_DO:
+            copyState = GetLocalState()
+            copyState.doData.splice(action.id-1, 1)
+            setLocalState(copyState)
+            console.log(GetLocalState())
+            return copyState
+
         default:
             return state
     }
@@ -87,6 +99,11 @@ export const updateMarkActionCreator = (id, mark) => ({
 
 export const resetStateActionCreator = () => ({
     type: RESET_STATE
+})
+
+export const deleteDoActionCreator = (id) => ({
+    type: DELETE_DO,
+    id: id
 })
 
 export default doReducer

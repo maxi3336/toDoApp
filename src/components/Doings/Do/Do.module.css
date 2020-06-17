@@ -1,5 +1,8 @@
 .do {
     display: flex;
-    width: 100%;
+    width: 40%;
+    min-height: content-box;
     margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
 }

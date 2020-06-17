@@ -3,9 +3,9 @@ import style from './DoneContent.module.css'
 
 const DoneContent = (props) => {
     return (
-        <div className={style.done}>
+        <p className={style.done}>
             {props.doneContent}
-        </div>
+        </p>
     )
 }
 

@@ -3,4 +3,7 @@
     font-size: 21px;
     font-style: italic;
     font-family: "Calibri Light";
+    max-width: 60%;
+    white-space: normal;
+    word-wrap: break-word;
 }

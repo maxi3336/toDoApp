@@ -1,10 +1,11 @@
 import React from 'react'
+import style from '../Content.module.css'
 
 const DoContent = (props) => {
     return (
-        <div>
+        <p>
             {props.doContent}
-        </div>
+        </p>
     )
 }
 

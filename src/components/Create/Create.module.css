@@ -8,14 +8,18 @@
 
 .textEnter {
     outline: none;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
     width: 80%;
-    min-height: 50px;
-    max-height: 300px;
     resize: none;
     text-align: center;
-    line-height: 30px;
     font-size: 18px;
     border-radius: 15px;
+    padding: 10px 5px;
+}
+
+.textEnter:focus {
+    box-shadow: 0 0 10px rgba(0,0,0, 0.9);;
 }
 
 button,
@@ -44,6 +48,9 @@ button:focus {
 .clear:hover{
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
+
+.btn:hover {background-color: #C3ECFF}
+.clear:hover {background-color: #D9FFC7}
 
 .btn:active {
     background-color: #80D8FF;

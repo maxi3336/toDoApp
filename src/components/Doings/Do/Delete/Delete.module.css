@@ -1,0 +1,17 @@
+.delete {
+    height: 30px;
+    width: 50px;
+    background-color: #FF8B8B;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-image: url("https://image.flaticon.com/icons/png/512/61/61848.png");
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+}
+
+.delete:hover {
+    background-color: #FFB6B6;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
