@@ -4,6 +4,6 @@ To run project you need:
     2) do 'npm install'
     3) do 'npm start'
 
-Or visit it: https://todo-1088d.web.app/
+Or visit it: https://todoapp-b1381.web.app/
 
 This app using localStorage
