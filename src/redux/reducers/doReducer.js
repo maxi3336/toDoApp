@@ -14,6 +14,15 @@ if(GetLocalState() === null) {
     initialState = GetLocalState()
 } else initialState = GetLocalState()
 
+let findIdOfDo = (state, id) => {
+    let DoId
+    for(let i = 0; i < state.doData.length; i++) {
+        if(state.doData[i].id === id)
+            DoId = i
+    }
+    return DoId
+}
+
 const doReducer = (state = initialState, action) => {
 
     let copyState
@@ -70,7 +79,8 @@ const doReducer = (state = initialState, action) => {
 
         case DELETE_DO:
             copyState = GetLocalState()
-            copyState.doData.splice(action.id-1, 1)
+            let id = findIdOfDo(copyState, action.id)
+            copyState.doData.splice(id, 1)
             setLocalState(copyState)
             console.log(GetLocalState())
             return copyState
