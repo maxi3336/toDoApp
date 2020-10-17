@@ -1,30 +1,20 @@
 import React from 'react'
-import style from "./Create.module.css";
 
 const Create = (props) => {
 
     let onDoChange = (event) => {
-        let text = event.target.value
-        props.updateNewDoText(text)
-    }
-
-    const handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
-            props.addDo()
-        }
+        props.updateText(event.target.value)
     }
 
     return (
-        <div className={style.create}>
+        <div className="form-group w-50 d-flex justify-content-around">
             <input
-                className={style.textEnter}
+                className="form-control w-75"
                 placeholder="Write what you need to do"
                 onChange={onDoChange}
                 value={props.newDoText}
-                onKeyDown={handleKeyDown}
             />
-            <button className={style.btn} onClick={props.addDo}>Add</button>
-            <button className={style.clear} onClick={props.reset}>Clear</button>
+            <button className="btn btn-outline-primary " onClick={props.addDo}>Add</button>
         </div>
     )
 }

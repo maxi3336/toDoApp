@@ -1,17 +1,26 @@
 import React from 'react'
-import style from './Do.module.css'
-import Content from "./Content/Content";
-import MarkedContainer from "./Mark/Makrs/MarkedContainer";
-import UnMarkedContainer from "./Mark/Makrs/UnMarkedContainer";
-import DeleteContainer from "./Delete/DeleteContainer";
 
 const Do = (props) => {
 
     return (
-        <div className={style.do}>
-            {props.isMarked?<MarkedContainer doId={props.doId}/>:<UnMarkedContainer doId={props.doId}/>}
-            <Content doContent={props.doContent} isMarked={props.isMarked}/>
-            <DeleteContainer doId={props.doId}/>
+        <div className="d-flex w-50 justify-content-between align-items-center m-2">
+            {
+                props.isMarked
+                    ?
+                    <button className="btn material-icons text-success b" onClick={() => props.updateMark(props.id)}>
+                        check_box
+                    </button>
+                    :
+                    <button className="btn material-icons" onClick={() => props.updateMark(props.id)}>
+                        check_box_outline_blank
+                    </button>
+            }
+            {
+                !props.isMarked ? <span className="text-primary">{props.content}</span> : <s>{props.content}</s>
+            }
+            <button className="material-icons btn btn-outline-danger" onClick={() => props.deleteDo(props.id)}>
+                delete
+            </button>
         </div>
     )
 }

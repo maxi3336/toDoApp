@@ -1,15 +1,14 @@
 import React from 'react'
 import {connect} from "react-redux";
 import Doings from "./Doings";
-import Do from "./Do/Do";
+import {deleteDo, updateMark } from "../../redux/reducers/doReducer";
 
 const mapStateToProps = (state) => {
     return {
-        doData: state.toDoData.doData.map(doData => <Do key={doData.id} doId={doData.id} doContent={doData.text} isMarked={doData.mark}/>)
+        doData: state.toDo.doData
     }
 }
 
-
-const DoingsContainer = connect(mapStateToProps)(Doings)
+const DoingsContainer = connect(mapStateToProps, { updateMark, deleteDo })(Doings)
 
 export default DoingsContainer

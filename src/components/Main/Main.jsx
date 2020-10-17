@@ -1,15 +1,12 @@
 import React from 'react'
-import style from './Main.module.css'
-import Doings from './../Doings/Doings'
 import CreateContainer from "../Create/CreateContainer";
 import DoingsContainer from "../Doings/DoingsContainer";
 
 
-const Main = (props) => {
-
+const Main = () => {
     return (
-        <div className={style.main}>
-            <h1 className={style.text}>ToDo App</h1>
+        <div className="container d-flex flex-column align-items-center">
+            <h1 className="text-primary m-5">ToDo App</h1>
             <CreateContainer/>
             <DoingsContainer/>
         </div>
