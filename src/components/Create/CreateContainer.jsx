@@ -7,4 +7,4 @@ const mapStateToProps = (state) => {
     return {newDoText: state.toDo.newDoText}
 }
 
-export default connect(mapStateToProps, { addDo, updateText })(Create)
+export default connect(mapStateToProps, { addDo })(Create)

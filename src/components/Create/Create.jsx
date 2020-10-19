@@ -1,22 +1,28 @@
 import React from 'react'
 
-const Create = (props) => {
-
-    let onDoChange = (event) => {
-        props.updateText(event.target.value)
+class Create extends React.Component{
+    state = {
+        newDoText: ''
     }
 
-    return (
-        <div className="form-group w-50 d-flex justify-content-around">
-            <input
-                className="form-control w-75"
-                placeholder="Write what you need to do"
-                onChange={onDoChange}
-                value={props.newDoText}
-            />
-            <button className="btn btn-outline-primary " onClick={props.addDo}>Add</button>
-        </div>
-    )
+    addDo = () => {
+        this.props.addDo(this.state.newDoText)
+        this.setState({newDoText: ''})
+    }
+
+    render() {
+        return (
+            <div className="form-group w-50 d-flex justify-content-around">
+                <input
+                    className="form-control w-75"
+                    placeholder="Write what you need to do"
+                    onChange={(e) => this.setState({ newDoText: e.currentTarget.value })}
+                    value={this.state.newDoText}
+                />
+                <button className="btn btn-outline-primary " onClick={this.addDo}>Add</button>
+            </div>
+        )
+    }
 }
 
 export default Create

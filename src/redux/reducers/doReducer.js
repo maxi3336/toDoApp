@@ -6,8 +6,7 @@ const UPDATE_TEXT = 'UPDATE-TEXT'
 const UPDATE_MARK = 'UPDATE-MARK'
 
 let initialState = {
-    doData: [],
-    newDoText: ''
+    doData: []
 }
 
 const doReducer = (state=initialState, action) => {
@@ -15,8 +14,7 @@ const doReducer = (state=initialState, action) => {
         case ADD_DO: {
             return {
                 ...state,
-                doData: [...state.doData, {id: v4(), text: state.newDoText, mark: false}],
-                newDoText: ''
+                doData: [...state.doData, {id: v4(), text: action.text, mark: false}]
             }
         }
         case DELETE_DO: {
@@ -48,7 +46,7 @@ const doReducer = (state=initialState, action) => {
     }
 }
 
-export const addDo = () => ({type: ADD_DO})
+export const addDo = (text) => ({type: ADD_DO, text})
 export const updateText = (text) => ({type: UPDATE_TEXT, text})
 export const updateMark = (id) => ({type: UPDATE_MARK, id})
 export const deleteDo = (id) => ({type: DELETE_DO, id})
