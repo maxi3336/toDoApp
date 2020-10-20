@@ -1,9 +1,9 @@
 import React from 'react'
-import Main from './components/Main/Main'
+import MainContainer  from './components/Main/MainContainer'
 
-const App = (props) => {
+const App = () => {
     return (
-        <Main/>
+        <MainContainer />
     )
 }
 

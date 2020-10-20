@@ -2,7 +2,6 @@ import {v4} from 'uuid'
 
 const ADD_DO = 'ADD-DO'
 const DELETE_DO = 'DELETE-DO'
-const UPDATE_TEXT = 'UPDATE-TEXT'
 const UPDATE_MARK = 'UPDATE-MARK'
 
 let initialState = {
@@ -23,12 +22,6 @@ const doReducer = (state=initialState, action) => {
                 doData: state.doData.filter(el => el.id !== action.id)
             }
         }
-        case UPDATE_TEXT: {
-            return {
-                ...state,
-                newDoText: action.text
-            }
-        }
         case UPDATE_MARK: {
             debugger
             return {
@@ -47,7 +40,6 @@ const doReducer = (state=initialState, action) => {
 }
 
 export const addDo = (text) => ({type: ADD_DO, text})
-export const updateText = (text) => ({type: UPDATE_TEXT, text})
 export const updateMark = (id) => ({type: UPDATE_MARK, id})
 export const deleteDo = (id) => ({type: DELETE_DO, id})
 

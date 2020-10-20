@@ -1,28 +1,23 @@
 import React from 'react'
+import {Field} from "redux-form";
+import {maxLength, requiredField} from "../validators";
+import {Input} from "../FormsControls";
 
-class Create extends React.Component{
-    state = {
-        newDoText: ''
-    }
+const maxLength5 = maxLength(5)
 
-    addDo = () => {
-        this.props.addDo(this.state.newDoText)
-        this.setState({newDoText: ''})
-    }
-
-    render() {
-        return (
-            <div className="form-group w-50 d-flex justify-content-around">
-                <input
-                    className="form-control w-75"
-                    placeholder="Write what you need to do"
-                    onChange={(e) => this.setState({ newDoText: e.currentTarget.value })}
-                    value={this.state.newDoText}
-                />
-                <button className="btn btn-outline-primary " onClick={this.addDo}>Add</button>
-            </div>
-        )
-    }
+const Create = (props) => {
+    return (
+        <form className="form-group w-50 d-flex justify-content-around" onSubmit={props.handleSubmit}>
+            <Field
+                className="form-control w-100"
+                name={'toDo'}
+                component={Input}
+                placeholder="Write what you need to do"
+                validate={[requiredField, maxLength5]}
+            />
+            <button className="btn btn-outline-primary ">Add</button>
+        </form>
+    )
 }
 
 export default Create
