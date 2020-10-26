@@ -3,7 +3,7 @@ import {Field} from "redux-form";
 import {maxLength, requiredField} from "../validators";
 import {Input} from "../FormsControls";
 
-const maxLength5 = maxLength(5)
+const maxLength30 = maxLength(30)
 
 const Create = (props) => {
     return (
@@ -13,7 +13,7 @@ const Create = (props) => {
                 name={'toDo'}
                 component={Input}
                 placeholder="Write what you need to do"
-                validate={[requiredField, maxLength5]}
+                validate={[requiredField, maxLength30]}
             />
             <button className="btn btn-outline-primary ">Add</button>
         </form>

@@ -1,0 +1,1 @@
+export const getDoData = state => (state.toDo.doData)
