@@ -1,10 +1,10 @@
 import {v4} from 'uuid'
 
-const ADD_DO = 'ADD-DO'
-const DELETE_DO = 'DELETE-DO'
-const UPDATE_MARK = 'UPDATE-MARK'
-const SET_EDIT = 'SET-EDIT'
-const CHANGE_DO = 'CHANGE-DO'
+const ADD_DO = 'do-app/do/ADD-DO'
+const DELETE_DO = 'do-app/do/DELETE-DO'
+const UPDATE_MARK = 'do-app/do/UPDATE-MARK'
+const SET_EDIT = 'do-app/do/SET-EDIT'
+const CHANGE_DO = 'do-app/do/CHANGE-DO'
 
 let initialState = {
     doData: []
