@@ -1,4 +1,3 @@
-import React from 'react'
 import Create from './Create'
 import {connect} from "react-redux";
 import {addDo} from "../../redux/reducers/doReducer";

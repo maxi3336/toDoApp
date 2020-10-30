@@ -1,9 +1,9 @@
-import doReducer, {addDo, deleteDo, updateMark} from "./doReducer";
+import doReducer, {addDo, changeDo, deleteDo, updateMark} from "./doReducer";
 
 const initialState = {
     doData: [
-        {id: 1, text: 'Some Do', mark: true},
-        {id: 2, text: 'Some Do 2', mark: false}
+        {id: 1, text: 'Some Do', mark: true, editing: false},
+        {id: 2, text: 'Some Do 2', mark: false, editing: false}
     ]
 }
 
@@ -35,4 +35,11 @@ it('UpdateMark is successful change mark', () => {
     const action = updateMark(2)
     const newState = doReducer(initialState, action)
     expect(newState.doData[1].mark).toBe(true)
+})
+
+it('Edit do is successful', () => {
+    const newText = 'New DO'
+    const action = changeDo(2, newText)
+    const newState = doReducer(initialState, action)
+    expect(newState.doData[1].text).toBe(newText)
 })

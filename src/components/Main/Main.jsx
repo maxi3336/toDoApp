@@ -1,13 +1,13 @@
 import React from 'react'
 import CreateContainer from "../Create/CreateContainer";
 import DoingsContainer from "../Doings/DoingsContainer";
-import {addDo} from "../../redux/reducers/doReducer";
 
 
 const Main = (props) => {
 
     const onSubmit = (data) => {
         props.addDo(data.toDo)
+        props.reset('toDo')
     }
 
     return (

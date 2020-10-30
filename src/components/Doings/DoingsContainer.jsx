@@ -1,8 +1,8 @@
-import React from 'react'
 import {connect} from "react-redux";
 import Doings from "./Doings";
-import {deleteDo, updateMark } from "../../redux/reducers/doReducer";
+import {changeDo, deleteDo, setEdit, updateMark} from "../../redux/reducers/doReducer";
 import {getDoData} from "../../redux/selectors/doSelector";
+import {reset} from 'redux-form'
 
 const mapStateToProps = (state) => {
     return {
@@ -10,4 +10,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { updateMark, deleteDo })(Doings)
+export default connect(mapStateToProps, { updateMark, deleteDo, setEdit, changeDo, reset })(Doings)
