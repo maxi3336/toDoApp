@@ -2,5 +2,5 @@
 /build
 /.idea
 .firebaserc
-.firebase.json
+firebase.json
 .firebase
